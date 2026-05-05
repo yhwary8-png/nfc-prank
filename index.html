@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System</title>
+<style>
+body {
+  background: black;
+  color: lime;
+  font-family: monospace;
+  padding: 20px;
+}
+.blink {
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<h2>System Breach Detected...</h2>
+<p id="text"></p>
+<p class="blink">█</p>
+
+<script>
+let lines = [
+  "Accessing device...",
+  "Bypassing security...",
+  "Extracting data...",
+  "Uploading files..."
+];
+
+let i = 0;
+function showLine() {
+  if (i < lines.length) {
+    document.getElementById("text").innerHTML += lines[i] + "<br>";
+    i++;
+    setTimeout(showLine, 1000);
+  } else {
+    setTimeout(() => {
+      document.body.innerHTML = "<h1 style='color:red;'>😂 Got you! مجرد مزحة</h1>";
+    }, 2000);
+  }
+}
+showLine();
+</script>
+
+</body>
+</html>
